@@ -9,8 +9,11 @@ fn main() {
     if args.len() > 2 {
             panic!("too much arguments");
     }
-
     let contents = fs::read_to_string(&args[1]).expect("Something wrong");
 
-    println!("{}", contents);
+    for line in contents.lines() {
+        if line.contains("FOUND") {
+            println!("{}", line)
+        }
+    }
 }
