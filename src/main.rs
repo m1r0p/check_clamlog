@@ -13,11 +13,16 @@ fn main() {
 
     let mut infected: Vec<&str> = Vec::new();
     for line in contents.lines() {
-        if line.contains("FOUND") {
+        if line.contains("moved to") {
             //println!("{}", &line);
             infected.push(&line);
         }
     }
-
-    println!("{:?}", infected)
+    if infected.len() == 0 {
+        println!("There are no infected items")
+    } else {
+        for inf in infected {
+            println!("{}", inf)
+        }
+    }
 }
