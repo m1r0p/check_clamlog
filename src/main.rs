@@ -14,7 +14,7 @@ fn main() {
 
     let mut infected: Vec<&str> = Vec::new();
     for line in contents.lines() {
-        if line.contains("moved to") {
+        if line.contains("FOUND") {
             //println!("{}", &line);
             infected.push(&line);
         }
