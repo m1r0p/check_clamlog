@@ -1,5 +1,6 @@
 use std::env;
 use std::fs;
+use std::process;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -19,10 +20,12 @@ fn main() {
         }
     }
     if infected.len() == 0 {
-        println!("There are no infected items")
+        println!("There are no infected items");
+        process::exit(0);
     } else {
         for inf in infected {
-            println!("{}", inf)
+            println!("{}", inf);
         }
+        process::exit(2);
     }
 }
